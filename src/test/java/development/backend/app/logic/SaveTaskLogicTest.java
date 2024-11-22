@@ -2,7 +2,7 @@ package development.backend.app.logic;
 
 import development.backend.app.adapter.service.TaskServiceImpl;
 import development.backend.app.enums.StatusEnum;
-import development.backend.app.model.TaskRequestDTO;
+import development.backend.app.resources.request.TaskRequestDTO;
 import development.backend.app.model.entity.Task;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -47,9 +47,9 @@ class SaveTaskLogicTest {
 	@Test
 	void handle() {
 		// Configuración del comportamiento del mock
-		when(taskService.saveTask(any(Task.class))).thenReturn(task);
+		when(taskService.createTask(any(Task.class))).thenReturn(task);
 		// Verifica la funcionalidad de SaveTaskLogic
-		var logicResponse = saveTaskLogic.Handle(request);
+		var logicResponse = saveTaskLogic.handle(request);
 
 		assertNotNull(logicResponse);
 		assertEquals(task, logicResponse.getBody());

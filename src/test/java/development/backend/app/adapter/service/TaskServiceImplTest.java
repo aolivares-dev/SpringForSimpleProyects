@@ -35,7 +35,7 @@ class TaskServiceImplTest {
 	@Test
 	void saveTask() {
 
-		var response = taskService.saveTask(taskModel);
+		var response = taskService.createTask(taskModel);
 
 		Assertions.assertNotNull(response);
 

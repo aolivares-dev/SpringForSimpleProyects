@@ -1,10 +1,11 @@
 package development.backend.app.controller;
 
+import development.backend.app.adapter.service.TaskService;
 import development.backend.app.adapter.service.TaskServiceImpl;
 import development.backend.app.enums.StatusEnum;
 import development.backend.app.logic.SaveTaskLogic;
-import development.backend.app.model.TaskRequestDTO;
-import development.backend.app.model.TaskResponseDTO;
+import development.backend.app.resources.request.TaskRequestDTO;
+import development.backend.app.resources.response.TaskResponseDTO;
 import development.backend.app.model.entity.Task;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,7 +13,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpStatus;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -21,11 +21,9 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class TaskControllerTest {
-	@Mock
-	private TaskServiceImpl taskService; // Mock del servicio
 
 	@Mock
-	private SaveTaskLogic taskLogic; // Inyección de dependencias en SaveTaskLogic
+	private TaskService taskLogic; // Inyección de dependencias en SaveTaskLogic
 
 	@InjectMocks
 	private TaskController taskController;
@@ -58,10 +56,10 @@ class TaskControllerTest {
 		expected.setStatus(StatusEnum.SUCCESS);
 
 		// Configurar el comportamiento de los mocks
-		when(taskLogic.Handle(request)).thenReturn(expected); // Uso correcto de `when`
+		when(taskLogic.createTask(request.getBody())).thenReturn(expected.getBody()); // Uso correcto de `when`
 
 		// Crear la request simulada
-		var mockRequestController = new HttpEntity<>(request);
+		var mockRequestController = request;
 
 		// Ejecutar la lógica a probar
 		var response = taskController.createTask(mockRequestController);
