@@ -22,6 +22,7 @@ public class Client {
 	private Long clientID;
 	private String name;
 	private String email;
+	private Long profileID;
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
 }

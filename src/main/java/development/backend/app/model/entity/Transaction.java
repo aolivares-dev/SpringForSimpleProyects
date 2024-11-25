@@ -20,6 +20,9 @@ public class Transaction {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long transactionID;
+	private Double chargeAmount;
+	private String debitAccount;
+	private String creditAccount;
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
 }
