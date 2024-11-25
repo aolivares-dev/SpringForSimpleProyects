@@ -1,7 +1,7 @@
 package development.backend.app.resources.response;
 
-import development.backend.app.enums.StatusEnum;
-import development.backend.app.resources.request.GeneriicRequestDTO;
+import development.backend.app.enums.HTTPStatusEnum;
+import development.backend.app.resources.request.GenericRequestDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,6 +11,6 @@ import lombok.Setter;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class TaskResponseDTO<T> extends GeneriicRequestDTO<T> {
-	private StatusEnum status;
+public class TaskResponseDTO<T> extends GenericRequestDTO<T> {
+	private HTTPStatusEnum status;
 }

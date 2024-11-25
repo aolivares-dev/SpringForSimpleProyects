@@ -19,7 +19,7 @@ import java.time.LocalDateTime;
 public class Movement {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	
+	private Long movementID;
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
 }

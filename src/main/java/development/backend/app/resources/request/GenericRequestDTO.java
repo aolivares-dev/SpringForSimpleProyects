@@ -1,16 +1,18 @@
 package development.backend.app.resources.request;
 
+import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
+@Data
+@Entity
 @Builder
-public class GeneriicRequestDTO<T> {
+@NoArgsConstructor
+@AllArgsConstructor
+public class GenericRequestDTO<T> {
 	private T Body;
 }

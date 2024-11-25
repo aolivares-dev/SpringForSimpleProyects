@@ -17,7 +17,6 @@ import lombok.NoArgsConstructor;
 public class Profile {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String clientID;
-	private String username;
-	private String authorization;
+	private Long profileID;
+	private String clientName;
 }

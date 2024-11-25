@@ -1,6 +1,6 @@
 package development.backend.app.resources.response;
 
-import development.backend.app.resources.request.GeneriicRequestDTO;
+import development.backend.app.resources.request.GenericRequestDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,6 +10,6 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class GenericResponseDTO<T> extends GeneriicRequestDTO<T> {
+public class GenericResponseDTO<T> extends GenericRequestDTO<T> {
 	private StatusResponseDTO status;
 }

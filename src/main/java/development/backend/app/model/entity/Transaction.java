@@ -1,5 +1,6 @@
 package development.backend.app.model.entity;
 
+import development.backend.app.enums.TransactionStatusEnum;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class Transaction {
 	private Double chargeAmount;
 	private String debitAccount;
 	private String creditAccount;
+	private TransactionStatusEnum status;
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
 }

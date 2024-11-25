@@ -19,7 +19,8 @@ public class Account {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long accountID;
-	private String clientID;
+	private Long profileID;
+	private Double balance;
 	private LocalDateTime createdAt;
 	private LocalDateTime updatedAt;
 }

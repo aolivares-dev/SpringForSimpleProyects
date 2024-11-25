@@ -2,13 +2,12 @@ package development.backend.app.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import org.springframework.http.HttpStatus;
 
 
 @AllArgsConstructor
 @Getter
-public enum StatusEnum {
+public enum HTTPStatusEnum {
 	SUCCESS("Success", HttpStatus.OK),
 	ERROR("Error", HttpStatus.INTERNAL_SERVER_ERROR),
 	NOT_FOUND("Not Found", HttpStatus.NOT_FOUND),
