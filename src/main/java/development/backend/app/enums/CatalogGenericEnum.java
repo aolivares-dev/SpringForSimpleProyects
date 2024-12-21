@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum MESSAGE_PREFIX {
+public enum CatalogGenericEnum {
 	INIT_PROCESS("Init process for: {}"),
 	EXCEPTION("Exception for: {}"),
 	END_PROCESS("End process for: {}"),

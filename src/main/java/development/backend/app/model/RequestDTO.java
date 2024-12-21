@@ -1,12 +1,14 @@
 package development.backend.app.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
-@Getter
-@Setter
+@Data
 public class RequestDTO<T> {
+
+	@JsonProperty("body")
 	private T body;
 }
