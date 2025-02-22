@@ -1,11 +1,19 @@
 package development.backend.app.command;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Service;
+import development.backend.app.logic.GenericLogic;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-@AllArgsConstructor
-@NoArgsConstructor
-@Service
-public class GenericCommand {
+@Component
+@Qualifier("GenericCommand")
+public class GenericCommand implements Command<String, String> {
+
+    @Autowired
+    private GenericLogic genericLogic;
+
+    @Override
+    public String execute(String request) {
+        return request;
+    }
 }
